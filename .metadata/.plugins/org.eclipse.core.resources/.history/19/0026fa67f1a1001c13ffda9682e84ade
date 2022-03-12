@@ -1,0 +1,43 @@
+class Solution22 {
+    public int func_a(String times){
+        int hour = Integer.parseInt(times.substring(0, 2));
+        int minute = Integer.parseInt(times.substring(3));
+        return hour*60 + minute;
+    }
+    public int solution22(String[] subwayTimes, String currentTime) {
+        int currentMinute = func_a(currentTime);
+        int INF = 1000000000;
+        int answer = INF;
+        for(int i = 0; i < subwayTimes.length; ++i)
+        {
+            int subwayMinute = func_a(subwayTimes[i]);
+            
+            if(answer < INF)
+            {
+                answer = subwayMinute - currentMinute;
+                break;
+            }
+        }
+        if(answer == INF)
+            return -1;
+        return answer;
+    }
+
+    // �븘�옒�뒗 �뀒�뒪�듃耳��씠�뒪 異쒕젰�쓣 �빐蹂닿린 �쐞�븳 main 硫붿냼�뱶�엯�땲�떎.
+    public static void main(String[] args) {
+        Solution22 sol = new Solution22();
+        String[] subwayTimes1 = {"05:31", "11:59", "13:30", "23:32"};
+        String currentTime1 = "12:00";
+        int ret1 = sol.solution22(subwayTimes1, currentTime1);
+
+        // [�떎�뻾] 踰꾪듉�쓣 �늻瑜대㈃ 異쒕젰 媛믪쓣 蹂� �닔 �엳�뒿�땲�떎.
+        System.out.println("solution 硫붿냼�뱶�쓽 諛섑솚 媛믪� " + ret1 + " �엯�땲�떎.");
+
+        String[] subwayTimes2 = {"14:31", "15:31"};
+        String currentTime2 = "15:31";
+        int ret2 = sol.solution22(subwayTimes2, currentTime2);
+
+        // [�떎�뻾] 踰꾪듉�쓣 �늻瑜대㈃ 異쒕젰 媛믪쓣 蹂� �닔 �엳�뒿�땲�떎.
+        System.out.println("solution 硫붿냼�뱶�쓽 諛섑솚 媛믪� " + ret2 + " �엯�땲�떎.");
+    }
+}
