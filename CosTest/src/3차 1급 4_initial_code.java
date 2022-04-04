@@ -1,20 +1,21 @@
 // 다음과 같이 import를 사용할 수 있습니다.
 import java.util.*;
 
-class Solution26 {
-    public int[] solution26(String commands) {
+class Solution341 {
+    public int solution341(String s1, String s2) {
         // 여기에 코드를 작성해주세요.
-        int[] answer = {};
+        int answer = 0;
         return answer;
     }
-
+    
     // 아래는 테스트케이스 출력을 해보기 위한 main 메소드입니다.
     public static void main(String[] args) {
-        Solution26 sol = new Solution26();
-        String commands = "URDDL";
-        int[] ret = sol.solution26(commands);
-
+        Solution341 sol = new Solution341();
+        String s1 = new String("ababc");
+        String s2 = new String("abcdab");
+        int ret = sol.solution341(s1, s2);
+        
         // [실행] 버튼을 누르면 출력 값을 볼 수 있습니다.
-        System.out.println("solution 메소드의 반환 값은 " + Arrays.toString(ret) + " 입니다.");
+        System.out.println("solution 메소드의 반환 값은 " + ret + " 입니다.");
     }
 }
